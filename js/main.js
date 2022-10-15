@@ -5,5 +5,18 @@ var tamanhoFrase = $("#tamanhoFrase");
 
 tamanhoFrase.text(numeroPalavras);
 
-console.log(tamanhoFrase);
+var campo = $(".campo-digitalizacao");
+
+campo.on("input", function(){
+
+	var conteudo = campo.val();
+	var quantidadeDePalavras = conteudo.split(/\S+/).length-1;
+
+	$("#contador-palavras").text(quantidadeDePalavras);
+
+	var quantidadeDeCaracteres = conteudo.length;
+
+	$("#contador-caracteres").text(quantidadeDeCaracteres);
+
+});
 
